@@ -748,7 +748,7 @@ func (m Model) placeholderView() string {
 		render = styles.Placeholder.Render
 	)
 
-	p := make([]rune, m.Width()+1)
+	p := make([]rune, max(m.Width()+1, len(m.Placeholder)))
 	copy(p, []rune(m.Placeholder))
 
 	m.virtualCursor.TextStyle = styles.Placeholder
